@@ -1,5 +1,5 @@
 // Surge根据Wifi自动切换代理的脚本
-const WIFI_DONT_NEED_PROXYS = ['NETGEAR_5G','NETGEAR','OoO-5G,'W','W_5G'];
+const WIFI_DONT_NEED_PROXYS = ['NETGEAR_5G','NETGEAR','OoO-5G,'Q','Q_5G'];
 const WIFI_NEED_AUTH = ['OoO','nancal'];
 const CURRENT_WIFI_SSID_KEY = 'current_wifi_ssid';
 
