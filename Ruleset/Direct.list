@@ -9,3 +9,5 @@ DOMAIN,ip.istatmenus.app
 DOMAIN,v4.plex.tv
 ## 自己的域名直连
 DOMAIN-SUFFIX,sowevo.com
+## plex.direct域名屏蔽
+DOMAIN-SUFFIX,plex.direct
