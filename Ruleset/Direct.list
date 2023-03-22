@@ -9,5 +9,5 @@ DOMAIN,ip.istatmenus.app
 DOMAIN,v4.plex.tv
 ## 自己的域名直连
 DOMAIN-SUFFIX,sowevo.com
-## plex.direct域名屏蔽
-DOMAIN-SUFFIX,plex.direct
+# 10.0.0.154,plex走直连,不然影响内网外网的判断
+IP-CIDR,10.0.0.154/32
