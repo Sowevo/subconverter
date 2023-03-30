@@ -11,5 +11,3 @@ DOMAIN,v4.plex.tv
 DOMAIN-SUFFIX,sowevo.com
 # 10.0.0.154,plex走直连,不然影响内网外网的判断
 IP-CIDR,10.0.0.154/32
-# btschool.club这个站的cf盾比较强,先不走代理了
-DOMAIN-SUFFIX,btschool.club
