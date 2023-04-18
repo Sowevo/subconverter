@@ -1,13 +1,13 @@
 # xbox不走代理
 SRC-IP-CIDR,10.0.0.18/32
 # Switch也不走
-SRC-IP-CIDR,10.0.0.16/32
+# SRC-IP-CIDR,10.0.0.16/32
 # NAS上的下载器不走代理
-SRC-IP-CIDR,10.0.0.151/32
+# SRC-IP-CIDR,10.0.0.151/32
 # 获取本机ip接口
-DOMAIN,ip.istatmenus.app
-DOMAIN,v4.plex.tv
+# DOMAIN,ip.istatmenus.app
+# DOMAIN,v4.plex.tv
 # 自己的域名直连
-DOMAIN-SUFFIX,sowevo.com
+# DOMAIN-SUFFIX,sowevo.com
 # 10.0.0.154,plex走直连,不然影响内网外网的判断
 # IP-CIDR,10.0.0.154/32
