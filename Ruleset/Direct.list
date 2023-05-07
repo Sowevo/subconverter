@@ -3,6 +3,8 @@
 
 # xbox不走代理
 SRC-IP-CIDR,10.0.0.18/32
+# 电视盒子不走代理
+SRC-IP-CIDR,10.0.0.17/32
 # Switch也不走
 SRC-IP-CIDR,10.0.0.16/32
 # NAS上的下载器不走代理
