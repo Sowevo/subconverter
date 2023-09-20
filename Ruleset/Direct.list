@@ -1,9 +1,17 @@
 # Surge解析不了SRC-IP-CIDR规则
-# Direct.list拆开为两个用->Direct.list,Direct_Surge.list
+# Direct.list拆开为两个用->Direct.SreIpCidr.list,Direct.list
+# SRC-IP-CIDR规则的写到Direct.SreIpCidr.list中
+# 其他规则写到Direct.list中
 
-# xbox不走代理
-SRC-IP-CIDR,10.0.0.18/32
-# Switch也不走
-SRC-IP-CIDR,10.0.0.16/32
-# NAS上的下载器不走代理
-SRC-IP-CIDR,10.0.0.151/32
+# 获取本机ip的接口要走直连
+DOMAIN,ip.istatmenus.app
+DOMAIN,v4.plex.tv
+# 自己的域名要走直连
+DOMAIN-SUFFIX,sowevo.com
+# Speedtest测速要走直连
+DOMAIN-KEYWORD,speedtest
+DOMAIN-SUFFIX,ooklaserver.net
+# 访问10.0.0.154,要走直连
+# 因为外网设置了10.0.0.0网段要走代理方便访问家中的设备
+# 在外网上访问Plex时,让他不走代理,直接使用公网ip访问
+IP-CIDR,10.0.0.154/32

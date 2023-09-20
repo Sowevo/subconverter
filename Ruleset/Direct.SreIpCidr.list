@@ -1,0 +1,11 @@
+# Surge解析不了SRC-IP-CIDR规则
+# Direct.list拆开为两个用->Direct.SreIpCidr.list,Direct.list
+# SRC-IP-CIDR规则的写到Direct.SreIpCidr.list中
+# 其他规则写到Direct.list中
+
+# xbox不走代理
+SRC-IP-CIDR,10.0.0.18/32
+# Switch也不走
+SRC-IP-CIDR,10.0.0.16/32
+# NAS上的下载器不走代理
+SRC-IP-CIDR,10.0.0.151/32
