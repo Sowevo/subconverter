@@ -5,6 +5,7 @@ from urllib.parse import urlencode
 from retrying import retry
 
 
+# 重试装饰器
 @retry(stop_max_attempt_number=10, wait_fixed=1000)
 def get_short_url(url):
     payload = {'longUrl': base64.b64encode(url.encode("utf-8"))}
@@ -28,10 +29,13 @@ def get_param(service_subconverter, subconverter):
     return param
 
 
-def get_url(service, config, _type):
+# 生成URL的函数
+def generate_url(service, config, _type):
     extend_url = config['extend_url']
     subconverter_url = config['subconverter_url']
+    # 非全局配置
     subconverter = config['subconverter']
+    # 通用配置
     service_subconverter = service['subconverter']
     name = service['name']
     site = service['site']
@@ -53,8 +57,10 @@ def get_url(service, config, _type):
     return f"|[{name}]({site})|{_type}|[链接]({url})|{short_url}|"
 
 
+# 主要执行部分
 config = get_config()
 services = config['services']
+
 # 补充tag信息
 for service in services:
     short_name = service.get('short_name', service['name'][0:2])
@@ -63,24 +69,33 @@ for service in services:
 
 mix_urls = []
 mix_renames = []
-param = {}
+mix_exclude = []
+mix_param = {}
+
 # 找出需要混合的
 for service in services:
     if service['mix']:
-        mix_urls.append(service['subconverter']['url'])
-        mix_renames.append(service['subconverter']['rename'])
-        param.update(service['subconverter'])
+        subconverter = service['subconverter']
+        mix_urls.append(subconverter.get('url', ''))
+        mix_renames.append(subconverter.get('rename', ''))
+        mix_exclude.append(subconverter.get('exclude', ''))
+        # 加入通用配置
+        mix_param.update(service['subconverter'])
+
 if len(mix_urls):
-    param.update({'url': '|'.join(mix_urls), 'rename': '`'.join(mix_renames)})
-    mix_service = {'name': '混合', 'site': 'https://baidu.com', 'subconverter': param}
+    mix_param.update({'url': '|'.join(mix_urls), 'exclude': '|'.join(mix_exclude), 'rename': '`'.join(mix_renames)})
+    mix_service = {'name': '混合', 'site': 'https://baidu.com', 'subconverter': mix_param}
     services.append(mix_service)
 
 print('| 机场  | 类型 | 链接  | 短连接|')
 print('| :----: | :----: | :----: | :----: |')
 for service in services:
-    clash_url = get_url(service, config, 'CLASH')
+    # 生成CLASH类型的URL
+    clash_url = generate_url(service, config, 'CLASH')
     print(clash_url)
-    home_url = get_url(service, config, 'HOME')
+    # 生成HOME类型的URL
+    home_url = generate_url(service, config, 'HOME')
     print(home_url)
-    surge_url = get_url(service, config, 'SURGE')
+    # 生成SURGE类型的URL
+    surge_url = generate_url(service, config, 'SURGE')
     print(surge_url)
