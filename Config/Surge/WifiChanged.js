@@ -1,5 +1,5 @@
 // Surge根据Wifi自动切换代理的脚本
-const WIFI_DONT_NEED_PROXYS = ['H3C'];
+const WIFI_DONT_NEED_PROXYS = ['H3C_'];
 const WIFI_NEED_AUTH = ['这个','暂时','没有'];
 const CURRENT_WIFI_SSID_KEY = 'current_wifi_ssid';
 
