@@ -11,7 +11,9 @@ DOMAIN-SUFFIX,sowevo.com
 # Speedtest测速要走直连
 DOMAIN-KEYWORD,speedtest
 DOMAIN-SUFFIX,ooklaserver.net
+
+
 # 访问10.0.0.154,要走直连
 # 因为外网设置了10.0.0.0网段要走代理方便访问家中的设备
 # 在外网上访问Plex时,让他不走代理,直接使用公网ip访问
-IP-CIDR,10.0.0.154/32
+# IP-CIDR,10.0.0.154/32

@@ -1,5 +1,5 @@
 # 10.0.0.1网段直接走这个
 IP-CIDR,10.0.0.1/24
-# 公司屏蔽的网站越来越多了草
-DOMAIN-SUFFIX,sogou.com
-DOMAIN-SUFFIX,sogoucdn.com
+# 公司屏蔽的网站
+# DOMAIN-SUFFIX,sogou.com
+# DOMAIN-SUFFIX,sogoucdn.com

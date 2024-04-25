@@ -1,31 +1,12 @@
 // Surge根据Wifi自动切换代理的脚本
+
+// 不需要代理的WIFI名称
 const WIFI_DONT_NEED_PROXYS = ['NETGEAR_5G','NETGEAR'];
-const WIFI_NEED_AUTH = ['OoO','nancal','OoO_5G'];
+// 当前WIFI名称存储的key
 const CURRENT_WIFI_SSID_KEY = 'current_wifi_ssid';
 
 if (wifiChanged()) {
-    if(WIFI_NEED_AUTH.includes($network.wifi.ssid)){
-        //先关掉代理(使用direct模式)
-        $surge.setOutboundMode('direct');
-        $notification.post(
-            'Surge',
-            `网络切换为 ${$network.wifi.ssid || '蜂窝'}`,
-            '进行网络认证'
-        );
-        //进行网络认证
-        $httpClient.post({
-            url: "http://1.1.1.3/ac_portal/login.php?opr=pwdLogin&userName=dongjq&pwd=123456&rememberPwd=1"
-        },(error, response, data) => {
-            $notification.post(
-                'Surge',
-                '网络认证成功',
-                data
-            );
-            setOutboundMode()
-        })
-    } else {
-        setOutboundMode()
-    }
+    setOutboundMode();
 }
 
 function setOutboundMode(){
