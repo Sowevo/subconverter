@@ -1,7 +1,7 @@
 // Surge根据Wifi自动切换代理的脚本
 
 // 不需要代理的WIFI名称
-const WIFI_DONT_NEED_PROXYS = ['NETGEAR_5G','NETGEAR'];
+const WIFI_DONT_NEED_PROXYS = ['RUOK_5G','RUOK'];
 // 当前WIFI名称存储的key
 const CURRENT_WIFI_SSID_KEY = 'current_wifi_ssid';
 
