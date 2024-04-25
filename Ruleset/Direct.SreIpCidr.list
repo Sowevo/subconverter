@@ -4,8 +4,8 @@
 # 其他规则写到Direct.list中
 
 # xbox不走代理
-# SRC-IP-CIDR,10.0.0.8/32
+SRC-IP-CIDR,10.0.0.8/32
 # Switch也不走
-# SRC-IP-CIDR,10.0.0.6/32
+SRC-IP-CIDR,10.0.0.6/32
 # NAS上的下载器不走代理
-# SRC-IP-CIDR,10.0.0.53/32
+SRC-IP-CIDR,10.0.0.53/32
