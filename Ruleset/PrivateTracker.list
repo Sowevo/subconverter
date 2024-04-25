@@ -1,7 +1,7 @@
-# 内容：Private Tracker
 # 来源：https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/PrivateTracker.list
-# 数量：117条
-# 尽量使用域名精确匹配!
+
+# 内容：PrivateTracker
+# 数量：122条
 # DOMAIN-KEYWORD,announce
 # DOMAIN-KEYWORD,torrent
 # DOMAIN-KEYWORD,tracker
