@@ -9,7 +9,17 @@ SRC-IP-CIDR,10.0.0.8/32
 SRC-IP-CIDR,10.0.0.6/32
 # NAS上的下载器不走代理
 SRC-IP-CIDR,10.0.0.53/32
-# M30Pro
+# 小米中枢网关
 SRC-IP-CIDR,10.0.0.15/32
-# M30Pro
+# 小米扫地机
 SRC-IP-CIDR,10.0.0.16/32
+# 小米摄像机
+SRC-IP-CIDR,10.0.0.17/32
+# 小白摄像机
+SRC-IP-CIDR,10.0.0.18/32
+# 猫砂盆
+SRC-IP-CIDR,10.0.0.19/32
+# 喂食器
+SRC-IP-CIDR,10.0.0.20/32
+# 三弟打印机
+SRC-IP-CIDR,10.0.0.13/32
