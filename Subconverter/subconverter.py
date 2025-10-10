@@ -96,6 +96,6 @@ for service in services:
     # 生成HOME类型的URL
     home_url = generate_url(service, config, 'HOME')
     print(home_url)
-    # 生成SURGE类型的URL
-    surge_url = generate_url(service, config, 'SURGE')
-    print(surge_url)
+    # # 生成SURGE类型的URL
+    # surge_url = generate_url(service, config, 'SURGE')
+    # print(surge_url)
