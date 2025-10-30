@@ -5,6 +5,7 @@
 
 # 获取本机ip的接口要走直连
 DOMAIN,ip.istatmenus.app
+DOMAIN,ip4.istatmenus.app
 DOMAIN,v4.plex.tv
 # 自己的域名要走直连
 DOMAIN-SUFFIX,sowevo.com
