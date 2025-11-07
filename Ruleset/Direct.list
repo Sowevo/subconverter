@@ -20,4 +20,5 @@ DOMAIN-SUFFIX,ooklaserver.net
 IP-CIDR,10.0.0.52/32
 # 公司网络认证
 SRC-IP-CIDR,1.1.1.3/32
+DOMAIN-SUFFIX,wifi.com
 
