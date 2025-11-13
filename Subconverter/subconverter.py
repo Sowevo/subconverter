@@ -53,6 +53,8 @@ def generate_url(service, config, _type):
     elif _type == 'ROUTER':
         param['target'] = 'clashr'
         param['config'] = subconverter['config_file']['router']
+    # 从param中删除config_file参数
+    param.pop('config_file')
     param['filename'] = f"{name}_{_type}.yaml"
     url = subconverter_url + '?' + urlencode(param)
     short_url = get_short_url(url)
