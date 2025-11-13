@@ -7,8 +7,10 @@
 DOMAIN,ip.istatmenus.app
 DOMAIN,ip4.istatmenus.app
 DOMAIN,v4.plex.tv
+
 # 自己的域名要走直连
 DOMAIN-SUFFIX,sowevo.com
+
 # Speedtest测速要走直连
 DOMAIN-KEYWORD,speedtest
 DOMAIN-SUFFIX,ooklaserver.net
@@ -18,6 +20,30 @@ DOMAIN-SUFFIX,ooklaserver.net
 # 因为外网设置了10.0.0.0网段要走代理方便访问家中的设备
 # 在外网上访问Plex时,让他不走代理,直接使用公网ip访问
 IP-CIDR,10.0.0.52/32
+
+
+# 家里一些奇怪设备要走直连
+# xbox不走代理
+SRC-IP-CIDR,10.0.0.8/32
+# Switch也不走
+SRC-IP-CIDR,10.0.0.6/32
+# NAS上的下载器不走代理
+SRC-IP-CIDR,10.0.0.53/32
+# 小米中枢网关
+SRC-IP-CIDR,10.0.0.15/32
+# 小米扫地机
+SRC-IP-CIDR,10.0.0.16/32
+# 小米摄像机
+SRC-IP-CIDR,10.0.0.17/32
+# 小白摄像机
+SRC-IP-CIDR,10.0.0.18/32
+# 猫砂盆
+SRC-IP-CIDR,10.0.0.19/32
+# 喂食器
+SRC-IP-CIDR,10.0.0.20/32
+# 三弟打印机
+SRC-IP-CIDR,10.0.0.13/32
+
 # 公司网络认证
 SRC-IP-CIDR,1.1.1.3/32
 DOMAIN-SUFFIX,wifi.com
