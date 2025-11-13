@@ -40,17 +40,19 @@ def generate_url(service, config, _type):
     name = service['name']
     site = service['site']
     param = get_param(service_subconverter, subconverter)
-    if _type == 'CLASH':
-        param['target'] = 'clashr'
-    elif _type == 'HOME':
+    if _type == 'WORK':
         param['target'] = 'clashr'
         param['url'] = param['url'] + '|tag:HO,' + extend_url
         param['rename'] = param['rename'] + '`!!GROUP=HO!!^@[HO]'
-    elif _type == 'SURGE':
-        param['target'] = 'surge'
-        param['ver'] = '4'
+        param['config'] = subconverter['config_file']['work']
+    elif _type == 'GENERAL':
+        param['target'] = 'clashr'
         param['url'] = param['url'] + '|tag:HO,' + extend_url
         param['rename'] = param['rename'] + '`!!GROUP=HO!!^@[HO]'
+        param['config'] = subconverter['config_file']['general']
+    elif _type == 'ROUTER':
+        param['target'] = 'clashr'
+        param['config'] = subconverter['config_file']['router']
     param['filename'] = f"{name}_{_type}.yaml"
     url = subconverter_url + '?' + urlencode(param)
     short_url = get_short_url(url)
@@ -90,12 +92,13 @@ if len(mix_urls):
 print('| 机场  | 类型 | 链接  | 短连接|')
 print('| :----: | :----: | :----: | :----: |')
 for service in services:
-    # 生成CLASH类型的URL
-    clash_url = generate_url(service, config, 'CLASH')
-    print(clash_url)
-    # 生成HOME类型的URL
-    home_url = generate_url(service, config, 'HOME')
-    print(home_url)
-    # # 生成SURGE类型的URL
-    # surge_url = generate_url(service, config, 'SURGE')
-    # print(surge_url)
+    # 生成公司用的订阅链接 -->> 包含回家规则与公司屏蔽服务规则
+    work_url = generate_url(service, config, 'WORK')
+    print(work_url)
+    # 生成通用的订阅链接 -->> 包含回家规则
+    general_url = generate_url(service, config, 'GENERAL')
+    print(general_url)
+    # 生成软路由的订阅链接
+    router_url = generate_url(service, config, 'ROUTER')
+    print(router_url)
+
