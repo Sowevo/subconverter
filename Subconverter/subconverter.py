@@ -53,10 +53,29 @@ def load_config(path: str = 'subconverter.yaml') -> Dict[str, Any]:
         return yaml.safe_load(stream)
 
 
+def merge_rename_rules(default_rename: Any, override_rename: Any) -> str:
+    """将默认和服务级 rename 规则合并，并用 ` 分隔。"""
+
+    def _extract_rules(value: Any) -> List[str]:
+        if not value:
+            return []
+        if isinstance(value, list):
+            return [str(item) for item in value if item]
+        if isinstance(value, str):
+            return [rule for rule in value.split('`') if rule]
+        return [str(value)]
+
+    rules: List[str] = []
+    rules.extend(_extract_rules(default_rename))
+    rules.extend(_extract_rules(override_rename))
+    return '`'.join(rules)
+
+
 def merge_params(defaults: Dict[str, Any], overrides: Dict[str, Any]) -> Dict[str, Any]:
     """生成服务级参数，服务内的配置覆盖全局配置。"""
     merged = deepcopy(defaults)
     merged.update(overrides)
+    merged['rename'] = merge_rename_rules(defaults.get('rename'), overrides.get('rename'))
     return merged
 
 

@@ -18,6 +18,11 @@ subconverter:
     tfo: 'false'
     expand: 'true'
     fdn: 'false'
+    rename:
+      # 示例：将“标准 IEPL 专线 01”改为“01🚗”，多个规则用列表即可在最终请求中用 ` 拼接
+      - 标准\sIEPL\s专线\s(\d+)@$1🚗
+      - 高级\sIEPL\s专线\s(\d+)@$1🏎
+      - 实验性\sIEPL\s专线\s(\d+)@$1🛸
 
 # 机场列表示例
 services:
