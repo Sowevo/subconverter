@@ -1,3 +1,4 @@
 .DS_Store
 /Subconverter/subconverter.yaml
 .idea
+/.spec-workflow/
