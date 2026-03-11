@@ -1,0 +1,85 @@
+profiles:
+  general-share:
+    output: Config/General-share.ini
+    ruleset:
+      - at: 0
+        from: 基础
+    custom_proxy_group:
+      - at: 0
+        from: 基础
+
+  general:
+    output: Config/General.ini
+    ruleset:
+      - at: 0
+        from: 基础
+      - at: 1
+        from: 俺要回家
+    custom_proxy_group:
+      - at: 0
+        from: 基础
+      - at: 3
+        from: 超低倍率
+      - at: 9
+        from: 俺要回家
+    emoji:
+      - at: 0
+        url: https://raw.githubusercontent.com/tindy2013/subconverter/refs/heads/master/base/snippets/emoji.txt
+      - at: 0
+        from: 回家
+
+  work-share:
+    output: Config/Work-share.ini
+    ruleset:
+      - at: 0
+        from: 基础
+      - at: 1
+        from: 公司屏蔽
+    custom_proxy_group:
+      - at: 0
+        from: 基础
+      - at: 8
+        from: 公司屏蔽
+
+  work:
+    output: Config/Work.ini
+    ruleset:
+      - at: 0
+        from: 基础
+      - at: 1
+        from: 俺要回家
+      - at: 2
+        from: 公司屏蔽
+    custom_proxy_group:
+      - at: 0
+        from: 基础
+      - at: 3
+        from: 超低倍率
+      - at: 9
+        from: 俺要回家
+      - at: 10
+        from: 公司屏蔽
+    emoji:
+      - at: 0
+        url: https://raw.githubusercontent.com/tindy2013/subconverter/refs/heads/master/base/snippets/emoji.txt
+      - at: 0
+        from: 回家
+
+  router:
+    output: Config/Router.ini
+    ruleset:
+      - at: 0
+        from: 基础
+      - at: 3
+        from: PT下载
+      - at: 14
+        from: 影音刮削
+    custom_proxy_group:
+      - at: 0
+        from: 基础
+      - at: 3
+        from: 超低倍率
+      - at: 6
+        from: 影音刮削
+      - at: 10
+        from: PT下载
