@@ -1,0 +1,44 @@
+name: Sync Config From Snippets
+
+on:
+  push:
+    paths:
+      - "Snippets/**"
+      - ".github/workflows/sync-config.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-commit-config:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate Config Files
+        run: |
+          python3 "Snippets/build_configs.py" --write-config
+
+      - name: Commit Updated Config
+        run: |
+          if git diff --quiet -- "Config/"; then
+            echo "No config changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "Config/"*.ini
+          git commit -m "chore(config): sync generated config from snippets"
+          git push
