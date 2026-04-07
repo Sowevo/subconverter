@@ -24,7 +24,7 @@ profiles:
         from: 俺要回家
     emoji:
       - at: 0
-        url: https://raw.githubusercontent.com/tindy2013/subconverter/refs/heads/master/base/snippets/emoji.txt
+        url: 基础
       - at: 0
         from: 回家
 
@@ -61,7 +61,7 @@ profiles:
         from: 公司屏蔽
     emoji:
       - at: 0
-        url: https://raw.githubusercontent.com/tindy2013/subconverter/refs/heads/master/base/snippets/emoji.txt
+        url: 基础
       - at: 0
         from: 回家
 
