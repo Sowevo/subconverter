@@ -83,3 +83,6 @@ profiles:
         from: 影音刮削
       - at: 10
         from: PT下载
+    emoji:
+      - at: 0
+        from: 基础
