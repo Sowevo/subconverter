@@ -10,6 +10,8 @@ DOMAIN,v4.plex.tv
 
 # 自己的域名要走直连
 DOMAIN-SUFFIX,sowevo.com
+# 实测将 bblmw.com 走直连可恢复 BambuStudio 导入（具体根因暂未完全定位）
+DOMAIN-SUFFIX,bblmw.com
 
 # Speedtest测速要走直连
 DOMAIN-KEYWORD,speedtest
@@ -50,4 +52,3 @@ SRC-IP-CIDR,10.0.0.70/32
 # 公司网络认证
 IP-CIDR,1.1.1.3/32
 DOMAIN-SUFFIX,wifi.com
-
