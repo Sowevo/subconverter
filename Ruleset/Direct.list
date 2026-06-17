@@ -10,6 +10,7 @@ DOMAIN,v4.plex.tv
 
 # 自己的域名要走直连
 DOMAIN-SUFFIX,sowevo.com
+DOMAIN-SUFFIX,nancalcloud.com
 # 实测将 bblmw.com 走直连可恢复 BambuStudio 导入（具体根因暂未完全定位）
 DOMAIN-SUFFIX,bblmw.com
 
