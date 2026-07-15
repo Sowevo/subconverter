@@ -143,10 +143,25 @@ def apply_steps(base_dir: Path, steps: list[dict[str, Any]], key: str) -> list[s
         if has_from == has_url:
             raise ValueError(f"Each step must contain exactly one of 'from' or 'url': {step}")
 
-        at = int(step.get("at", len(lines)))
-        if at < 0:
-            at = 0
-        if at > len(lines):
+        has_before = "before" in step
+        if has_before:
+            anchor = str(step["before"])
+            if key == "custom_proxy_group":
+                matches = [idx for idx, line in enumerate(lines) if parse_group_name(line) == anchor]
+            elif key == "ruleset":
+                matches = [
+                    idx
+                    for idx, line in enumerate(lines)
+                    if line.startswith("ruleset=") and line.split(",", 1)[-1] == anchor
+                ]
+            else:
+                raise ValueError(f"'before' is not supported for '{key}': {step}")
+            if len(matches) != 1:
+                raise ValueError(
+                    f"Expected exactly one {key} anchor '{anchor}', found {len(matches)}"
+                )
+            at = matches[0]
+        else:
             at = len(lines)
 
         if has_from:

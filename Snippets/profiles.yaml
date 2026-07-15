@@ -2,101 +2,86 @@ profiles:
   general-share:
     output: Config/General-share.ini
     ruleset:
-      - at: 0
-        from: 基础
+      - from: 基础
     custom_proxy_group:
-      - at: 0
-        from: 基础
-      - at: 3
+      - from: 基础
+      - before: 🌍 国外媒体
         from: 地区自动选择
-      - at: 100
+      - before: 🎯 全球直连
         from: 智能助手地区
 
   general:
     output: Config/General.ini
     ruleset:
-      - at: 0
-        from: 基础
-      - at: 1
+      - from: 基础
+      - before: https://raw.githubusercontent.com/Sowevo/subconverter/main/Ruleset/AIGC.list
         from: 俺要回家
     custom_proxy_group:
-      - at: 0
-        from: 基础
-      - at: 3
+      - from: 基础
+      - before: 🌍 国外媒体
         from: 地区自动选择
-      - at: 100
-        from: 俺要回家
-      - at: 100
+      - before: 🎯 全球直连
         from: 智能助手地区
+      - before: 🎯 全球直连
+        from: 俺要回家
     emoji:
-      - at: 0
-        from: 基础
-      - at: 0
-        from: 回家
+      - from: 回家
+      - from: 基础
 
   work-share:
     output: Config/Work-share.ini
     ruleset:
-      - at: 0
-        from: 基础
-      - at: 1
+      - from: 基础
+      - before: https://raw.githubusercontent.com/Sowevo/subconverter/main/Ruleset/AIGC.list
         from: 公司屏蔽
     custom_proxy_group:
-      - at: 0
-        from: 基础
-      - at: 3
+      - from: 基础
+      - before: 🌍 国外媒体
         from: 地区自动选择
-      - at: 100
-        from: 公司屏蔽
-      - at: 100
+      - before: 🎯 全球直连
         from: 智能助手地区
+      - before: 🎯 全球直连
+        from: 公司屏蔽
 
   work:
     output: Config/Work.ini
     ruleset:
-      - at: 0
-        from: 基础
-      - at: 1
+      - from: 基础
+      - before: https://raw.githubusercontent.com/Sowevo/subconverter/main/Ruleset/AIGC.list
         from: 俺要回家
-      - at: 2
+      - before: https://raw.githubusercontent.com/Sowevo/subconverter/main/Ruleset/AIGC.list
         from: 公司屏蔽
     custom_proxy_group:
-      - at: 0
-        from: 基础
-      - at: 3
+      - from: 基础
+      - before: 🌍 国外媒体
         from: 地区自动选择
-      - at: 100
-        from: 俺要回家
-      - at: 100
-        from: 公司屏蔽
-      - at: 100
+      - before: 🎯 全球直连
         from: 智能助手地区
+      - before: 🎯 全球直连
+        from: 俺要回家
+      - before: 🎯 全球直连
+        from: 公司屏蔽
     emoji:
-      - at: 0
-        from: 基础
-      - at: 0
-        from: 回家
+      - from: 回家
+      - from: 基础
 
   router:
     output: Config/Router.ini
     ruleset:
-      - at: 0
-        from: 基础
-      - at: 3
+      - from: 基础
+      - before: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
         from: PT下载
-      - at: 14
+      - before: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
         from: 影音刮削
     custom_proxy_group:
-      - at: 0
-        from: 基础
-      - at: 3
+      - from: 基础
+      - before: 🌍 国外媒体
         from: 地区自动选择
-      - at: 13
+      - before: 🎯 全球直连
         from: 智能助手地区
-      - at: 15
+      - before: 🎯 全球直连
         from: PT下载
-      - at: 16
+      - before: 🎯 全球直连
         from: 影音刮削
     emoji:
-      - at: 0
-        from: 基础
+      - from: 基础

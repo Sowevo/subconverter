@@ -67,7 +67,7 @@ Snippets/
     回家.txt           ← 回家节点 emoji
 ```
 
-`profiles.yaml` 中每个 profile 通过 `from`（本地片段）或 `url`（远程片段）按指定位置拼装，最终生成完整的 `.ini` 配置文件。
+`profiles.yaml` 中每个 profile 通过 `from`（本地片段）或 `url`（远程片段）拼装。没有 `before` 时按声明顺序追加；需要插入已有内容中间时使用 `before`，策略组按组名定位，规则集按规则地址定位。
 
 ### profiles.yaml 示例
 
@@ -76,22 +76,20 @@ profiles:
   general:
     output: Config/General.ini
     ruleset:
-      - at: 0
-        from: 基础        # 在位置 0 插入基础规则集
-      - at: 1
-        from: 俺要回家     # 在位置 1 插入回家规则集
+      - from: 基础
+      - before: https://raw.githubusercontent.com/Sowevo/subconverter/main/Ruleset/AIGC.list
+        from: 俺要回家
     custom_proxy_group:
-      - at: 0
-        from: 基础
-      - at: 3
-        from: 超低倍率
-      - at: 9
+      - from: 基础
+      - before: 🌍 国外媒体
+        from: 地区自动选择
+      - before: 🎯 全球直连
+        from: 智能助手地区
+      - before: 🎯 全球直连
         from: 俺要回家
     emoji:
-      - at: 0
-        from: 基础
-      - at: 0
-        from: 回家
+      - from: 回家
+      - from: 基础
 ```
 
 ## 本地构建
