@@ -2,10 +2,11 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 from urllib import error, request
-from datetime import datetime
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
 SNIPPETS = ROOT / "Snippets"
@@ -229,7 +230,7 @@ def wrap_items_comment(prefix: str, items: list[str], width: int = 60) -> list[s
 def build_intro_comments(profile_name: str, ruleset_lines: list[str], group_lines: list[str]) -> list[str]:
     ruleset_names = unique_keep_order([parse_ruleset_name(x) for x in ruleset_lines if x.startswith("ruleset=")])
     group_names = unique_keep_order([parse_group_name(x) for x in group_lines if x.startswith("custom_proxy_group=")])
-    generated_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    generated_at = datetime.now(ZoneInfo("Asia/Shanghai")).strftime("%Y-%m-%d %H:%M:%S")
     intro = [
         "; ===== 自动生成说明 =====",
         f"; 配置名称: {profile_name}",
