@@ -7,6 +7,10 @@ profiles:
     custom_proxy_group:
       - at: 0
         from: 基础
+      - at: 3
+        from: 地区自动选择
+      - at: 100
+        from: 智能助手地区
 
   general:
     output: Config/General.ini
@@ -19,9 +23,11 @@ profiles:
       - at: 0
         from: 基础
       - at: 3
-        from: 超低倍率
-      - at: 9
+        from: 地区自动选择
+      - at: 100
         from: 俺要回家
+      - at: 100
+        from: 智能助手地区
     emoji:
       - at: 0
         from: 基础
@@ -38,8 +44,12 @@ profiles:
     custom_proxy_group:
       - at: 0
         from: 基础
-      - at: 8
+      - at: 3
+        from: 地区自动选择
+      - at: 100
         from: 公司屏蔽
+      - at: 100
+        from: 智能助手地区
 
   work:
     output: Config/Work.ini
@@ -54,11 +64,13 @@ profiles:
       - at: 0
         from: 基础
       - at: 3
-        from: 超低倍率
-      - at: 9
+        from: 地区自动选择
+      - at: 100
         from: 俺要回家
-      - at: 10
+      - at: 100
         from: 公司屏蔽
+      - at: 100
+        from: 智能助手地区
     emoji:
       - at: 0
         from: 基础
@@ -78,11 +90,13 @@ profiles:
       - at: 0
         from: 基础
       - at: 3
-        from: 超低倍率
-      - at: 6
-        from: 影音刮削
-      - at: 10
+        from: 地区自动选择
+      - at: 13
+        from: 智能助手地区
+      - at: 15
         from: PT下载
+      - at: 16
+        from: 影音刮削
     emoji:
       - at: 0
         from: 基础
