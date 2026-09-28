@@ -4,6 +4,12 @@ hosts:
   oss-cn-guangzhou.toshiba-asdf.com: gpt-ai-guangzhou.micron-asdf.com
   oss-cn-shanghai.toshiba-asdf.com: gpt-ai-shanghai.micron-asdf.com
 
-# 由 OpenClash 管理 DNS 启用状态和上游服务器，此处仅开启 hosts 查询。
+# 由 OpenClash 管理 DNS 启用状态和上游服务器。
 dns:
   use-hosts: true
+  # 节点域名通过 OpenClash 的本机 DNS 解析，以应用上面的域名映射。
+  proxy-server-nameserver:
+    - udp://127.0.0.1:7874
+  # 映射后的入口必须返回真实 IP，不能分配 fake-ip。
+  fake-ip-filter:
+    - +.micron-asdf.com
