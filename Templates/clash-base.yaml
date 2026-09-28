@@ -1,15 +1,24 @@
-# WD 节点入口域名映射；其他域名继续使用客户端的 DNS 配置。
+# WD 节点入口域名映射。
 hosts:
   cos-ap-beijing.toshiba-asdf.com: gpt-ai-beijing.micron-asdf.com
   oss-cn-guangzhou.toshiba-asdf.com: gpt-ai-guangzhou.micron-asdf.com
   oss-cn-shanghai.toshiba-asdf.com: gpt-ai-shanghai.micron-asdf.com
 
-# 由 OpenClash 管理 DNS 启用状态和上游服务器。
+# 由 OpenClash 管理 DNS 启用状态；这里指定节点入口的解析方式。
 dns:
   use-hosts: true
-  # 节点域名通过 OpenClash 的本机 DNS 解析，以应用上面的域名映射。
+  # 普通节点入口走真实 DNS，避免进入本机 fake-ip 解析。
   proxy-server-nameserver:
-    - udp://127.0.0.1:7874
-  # 映射后的入口必须返回真实 IP，不能分配 fake-ip。
+    - 119.29.29.29
+    - 223.5.5.5
+  # 仅 WD 入口经本机 DNS 应用 hosts 域名映射。
+  proxy-server-nameserver-policy:
+    cos-ap-beijing.toshiba-asdf.com:
+      - udp://127.0.0.1:7874
+    oss-cn-guangzhou.toshiba-asdf.com:
+      - udp://127.0.0.1:7874
+    oss-cn-shanghai.toshiba-asdf.com:
+      - udp://127.0.0.1:7874
+  # WD 映射目标必须返回真实 IP，不能分配 fake-ip。
   fake-ip-filter:
     - +.micron-asdf.com
