@@ -14,6 +14,15 @@ DOMAIN-SUFFIX,nancalcloud.com
 # 实测将 bblmw.com 走直连可恢复 BambuStudio 导入（具体根因暂未完全定位）
 DOMAIN-SUFFIX,bblmw.com
 
+# 蓝点网相关域名走直连
+DOMAIN-SUFFIX,lancdn.com
+DOMAIN-SUFFIX,landian.news
+DOMAIN-SUFFIX,landian.vip
+DOMAIN-SUFFIX,landian.xyz
+DOMAIN-SUFFIX,landiannews.com
+DOMAIN-SUFFIX,ourl.co
+DOMAIN-SUFFIX,wsoso.com
+
 # Speedtest测速要走直连
 DOMAIN-KEYWORD,speedtest
 DOMAIN-SUFFIX,ooklaserver.net
