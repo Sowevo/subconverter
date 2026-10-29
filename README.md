@@ -106,6 +106,20 @@ python3 Snippets/build_configs.py --write-config
 
 ## 自动同步
 
+### 公司内网 DNS
+
+`rysaas.cn` 及其全部子域名的直连规则维护在 `Ruleset/Direct.list`。
+该文件已由基础规则集引用，修改域名规则不需要重新生成 `Config/*.ini`。
+
+Clash/Mihomo 的公司 DNS 配置另维护在 `Snippets/clash/company-dns.yaml`。
+现有 INI 生成器只生成规则集、策略组和 emoji，不会自动引入这个 DNS 片段；
+需要在客户端的持久覆写配置中合并它，保留已有 DNS 条目，避免订阅刷新覆盖。
+片段中的 `#en1` 强制 DNS 查询经当前 Mac 的公司 Wi-Fi 发送，其他设备需调整接口名。
+同时需要公司 Wi-Fi 路由可达 `192.168.5.0/24`，当前 Mac 由 `fix-wifi` 维护。
+
+验证时，`dig +short lecang-dev.rysaas.cn A` 应返回真实内网地址
+（本次验证为 `192.168.5.250`），不应返回 `198.18.x.x` 的 Fake-IP。
+
 推送 `Snippets/` 目录的变更后，GitHub Actions 会自动运行 `build_configs.py --write-config` 并将生成的 `Config/*.ini` 提交回仓库。
 
 参见 [`.github/workflows/sync-config.yml`](.github/workflows/sync-config.yml)。
