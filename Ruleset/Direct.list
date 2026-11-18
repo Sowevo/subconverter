@@ -11,11 +11,22 @@ DOMAIN,v4.plex.tv
 # 自己的域名要走直连
 DOMAIN-SUFFIX,sowevo.com
 DOMAIN-SUFFIX,nancalcloud.com
+# 乐仓公司环境走直连
+DOMAIN-SUFFIX,rysaas.cn
 # 实测将 bblmw.com 走直连可恢复 BambuStudio 导入（具体根因暂未完全定位）
 DOMAIN-SUFFIX,bblmw.com
 
 # Fusion 这倒霉玩意，通知服务连不上还会把自己折腾到闪退；先直连放行，避开广告规则误拦截
 DOMAIN-SUFFIX,pubnub.com
+
+# 蓝点网相关域名走直连
+DOMAIN-SUFFIX,lancdn.com
+DOMAIN-SUFFIX,landian.news
+DOMAIN-SUFFIX,landian.vip
+DOMAIN-SUFFIX,landian.xyz
+DOMAIN-SUFFIX,landiannews.com
+DOMAIN-SUFFIX,ourl.co
+DOMAIN-SUFFIX,wsoso.com
 
 # Speedtest测速要走直连
 DOMAIN-KEYWORD,speedtest
