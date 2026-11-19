@@ -43,8 +43,6 @@ IP-CIDR,10.0.0.52/32
 # 来源ip规则
 # xbox不走代理
 SRC-IP-CIDR,10.0.0.8/32
-# Xbox 编号下载域名直连
-DOMAIN-REGEX,^assets[0-9]+\.xboxlive\.com$
 # Switch也不走
 SRC-IP-CIDR,10.0.0.6/32
 # NAS上的下载器不走代理
