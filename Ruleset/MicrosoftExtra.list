@@ -1,2 +1,0 @@
-# Xbox 编号下载域名，例如 assets1.xboxlive.com
-DOMAIN-REGEX,^assets[0-9]+\.xboxlive\.com$
