@@ -41,7 +41,8 @@ IP-CIDR,10.0.0.52/32
 
 # 家里一些奇怪设备要走直连
 # 来源ip规则
-# xbox不走代理
+# Xbox 网口和 Wi-Fi 不走代理，推荐用有线，不要用 Wi-Fi
+SRC-IP-CIDR,10.0.0.7/32
 SRC-IP-CIDR,10.0.0.8/32
 # Switch也不走
 SRC-IP-CIDR,10.0.0.6/32
