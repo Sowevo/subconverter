@@ -1,4 +1,6 @@
 # 公司屏蔽的网站
+# 3DM：公司 Wi-Fi 直连 TLS 握手失败，代理访问正常
+DOMAIN-SUFFIX,3dmgame.com
 DOMAIN-SUFFIX,sogou.com
 DOMAIN-SUFFIX,sogoucdn.com
 DOMAIN-SUFFIX,zhihu.com
