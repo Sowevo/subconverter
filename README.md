@@ -27,7 +27,6 @@
 │   ├── Work-share.ini
 │   └── Router.ini
 ├── Ruleset/                 # 自维护的规则集文件
-│   ├── AIGC.list            # AI 服务（OpenAI、Gemini、Claude 等）
 │   ├── Direct.list          # 直连规则（自有域名、设备 IP 等）
 │   ├── GoHome.list          # 回家规则（10.0.0.1/24）
 │   ├── MediaScraper.list    # 影音刮削（TMDB）
@@ -77,7 +76,7 @@ profiles:
     output: Config/General.ini
     ruleset:
       - from: 基础
-      - before: https://raw.githubusercontent.com/Sowevo/subconverter/main/Ruleset/AIGC.list
+      - before: https://ruleset.skk.moe/Clash/non_ip/ai.txt
         from: 俺要回家
     custom_proxy_group:
       - from: 基础
@@ -93,6 +92,11 @@ profiles:
 ```
 
 ## 本地构建
+
+AI 分流直接引用 Sukka 维护的 Clash 规则 `https://ruleset.skk.moe/Clash/non_ip/ai.txt`，
+不再维护本地 AI 规则快照。`Snippets/ruleset/基础.txt` 的规则地址与
+`Snippets/profiles.yaml` 中四处对应的 `before` 地址必须一致，才能保持回家和公司屏蔽规则的插入顺序。
+上游规则更新后，需要重新生成并发布私有订阅，已有 Gist 不会自动同步上游内容。
 
 需要 Python 3.11+。
 

@@ -14,7 +14,7 @@ profiles:
     output: Config/General.ini
     ruleset:
       - from: 基础
-      - before: https://raw.githubusercontent.com/Sowevo/subconverter/main/Ruleset/AIGC.list
+      - before: https://ruleset.skk.moe/Clash/non_ip/ai.txt
         from: 俺要回家
     custom_proxy_group:
       - from: 基础
@@ -32,7 +32,7 @@ profiles:
     output: Config/Work-share.ini
     ruleset:
       - from: 基础
-      - before: https://raw.githubusercontent.com/Sowevo/subconverter/main/Ruleset/AIGC.list
+      - before: https://ruleset.skk.moe/Clash/non_ip/ai.txt
         from: 公司屏蔽
     custom_proxy_group:
       - from: 基础
@@ -47,9 +47,9 @@ profiles:
     output: Config/Work.ini
     ruleset:
       - from: 基础
-      - before: https://raw.githubusercontent.com/Sowevo/subconverter/main/Ruleset/AIGC.list
+      - before: https://ruleset.skk.moe/Clash/non_ip/ai.txt
         from: 俺要回家
-      - before: https://raw.githubusercontent.com/Sowevo/subconverter/main/Ruleset/AIGC.list
+      - before: https://ruleset.skk.moe/Clash/non_ip/ai.txt
         from: 公司屏蔽
     custom_proxy_group:
       - from: 基础

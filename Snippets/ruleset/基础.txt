@@ -1,5 +1,5 @@
 🎯 全球直连,https://raw.githubusercontent.com/Sowevo/subconverter/main/Ruleset/Direct.list
-🤖 智能助手,https://raw.githubusercontent.com/Sowevo/subconverter/main/Ruleset/AIGC.list
+🤖 智能助手,https://ruleset.skk.moe/Clash/non_ip/ai.txt
 🚀 节点选择,https://raw.githubusercontent.com/Sowevo/subconverter/main/Ruleset/Proxy.list
 🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
 🎯 全球直连,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
